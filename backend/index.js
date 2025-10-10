@@ -28,6 +28,12 @@ app.use('/api/activities', require('./routes/activities'));
 app.use('/api/reports', require('./routes/reports'));
 app.use('/api/settings', require('./routes/settings'));
 app.use('/api/notifications', require('./routes/notifications'));
+// drop cowboy webhook :todo
+app.post('/webhook/dropcowboy',(req,res)=>{
+  console.log("webhook data from here ");
+  console.log(req.body);
+  console.log("webhook data ended ");
+})
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
